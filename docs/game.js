@@ -95,6 +95,13 @@ function setStatus(text) {
   statusEl.textContent = text;
 }
 
+function setEndStatus(text) {
+  statusEl.textContent = text;
+  statusEl.classList.remove("pop");
+  void statusEl.offsetWidth; // restart the animation
+  statusEl.classList.add("pop");
+}
+
 function startGame(selectedMode) {
   mode = selectedMode;
   board = newBoard();
@@ -146,9 +153,9 @@ function playMove(col, player) {
   if (checkWin(board, row, col)) {
     gameOver = true;
     if (mode === "2p") {
-      setStatus((player === 1 ? "Yellow" : "Red") + " wins!");
+      setEndStatus((player === 1 ? "Yellow" : "Red") + " wins!");
     } else {
-      setStatus(player === 1 ? "You win!" : "Bot wins.");
+      setEndStatus(player === 1 ? "You win!" : "Bot wins.");
     }
     spawnConfetti();
     return;
@@ -156,7 +163,7 @@ function playMove(col, player) {
 
   if (isFull(board)) {
     gameOver = true;
-    setStatus("Draw.");
+    setEndStatus("Draw.");
     return;
   }
 
