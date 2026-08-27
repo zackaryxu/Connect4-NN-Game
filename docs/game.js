@@ -183,3 +183,4 @@ document.getElementById("btn-impossible").addEventListener("click", () => startG
 document.getElementById("btn-restart").addEventListener("click", backToStart);
 
 
+
