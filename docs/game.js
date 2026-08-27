@@ -182,3 +182,4 @@ document.getElementById("btn-hard").addEventListener("click", () => startGame("H
 document.getElementById("btn-impossible").addEventListener("click", () => startGame("IMPOSSIBLE"));
 document.getElementById("btn-restart").addEventListener("click", backToStart);
 
+
