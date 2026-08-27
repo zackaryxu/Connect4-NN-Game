@@ -150,6 +150,7 @@ function playMove(col, player) {
     } else {
       setStatus(player === 1 ? "You win!" : "Bot wins.");
     }
+    spawnConfetti();
     return;
   }
 
